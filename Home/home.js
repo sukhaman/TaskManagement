@@ -47,3 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // Add profile functionality here
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const percentage = 70; // Example percentage
+    const circle = document.querySelector('.circle');
+    const radius = circle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
+    
+    circle.style.strokeDasharray = `${circumference}`;
+    circle.style.strokeDashoffset = `${circumference - (percentage / 100) * circumference}`;
+    
+    document.getElementById('progress-text').textContent = `${percentage}%`;
+});

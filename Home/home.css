@@ -11,11 +11,6 @@ body {
     box-sizing: border-box;
 }
 
-#main-title {
-    text-align: center;
-    margin-top: 20px;
-}
-
 .shadow-container {
     padding: 20px;
     background-color: #fff;
@@ -28,41 +23,127 @@ body {
     overflow: auto; /* Ensure content scrolls if it overflows */
 }
 
-.container-header {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-    text-align: center;
-}
-
 .container {
     display: flex;
-    justify-content: flex-end; /* Align items to the right */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Distribute space between heading and buttons */
+    gap: 20px; /* Space between heading and buttons */
+}
+
+.container-header {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+    /* Align the text to the left side of the container */
+    text-align: left;
+    flex: 1; /* Allow the heading to take up available space */
+}
+
+.button-container {
+    display: flex;
+    box-shadow: 0 2 px 4px rgba(0, 0, 0, 0.1);
     gap: 10px; /* Add space between buttons */
+    flex-direction: row;
+    align-items: center; /* Center elements horizontally */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .frame-btn {
     width: 50px;
     height: 50px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border: none;
+    border-radius: 50%; /* Make buttons circular */
     background: none;
     cursor: pointer;
-    padding: 5px;
-    margin: 0;
-    transition: transform 0.3s ease;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform 0.3s ease;
 }
 
 .frame-btn:hover {
     transform: scale(1.1);
 }
 
-.icon-img, .profile-img {
+.icon-img {
+    width: 50px;
+    height: 50px;
+    border: 5;
+    border-radius: 50%; /* Make buttons circular */
+}
+
+.drop_icon-img {
+    width: 20px;
+    height: 20px;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center elements horizontally */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.profile-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Space between icon and labels */
+}
+
+.profile-image-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.profile-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 50%; /* Add this line to make the images circular */
+    border-radius: 50%;
+    border: 2px solid #fff;
 }
+
+.progress-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.progress-circle svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 2.8;
+}
+
+.circle {
+    fill: none;
+    stroke: #4caf50;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.3s;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+}
+
